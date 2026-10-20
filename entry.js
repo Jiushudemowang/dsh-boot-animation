@@ -460,6 +460,7 @@ export function apply(ctx, config) {
       const sound = readField(config, 'sound')
       const clickToEnter = readField(config, 'clickToEnter')
       const showHint = readField(config, 'showHint')
+      const fixedClip = readField(config, 'fixedClip')
       return {
         enabled: typeof enabled === 'boolean' ? enabled : DEFAULT_SETTINGS.enabled,
         fadeMs: typeof fadeMs === 'number' ? fadeMs : DEFAULT_SETTINGS.fadeMs,
@@ -468,6 +469,7 @@ export function apply(ctx, config) {
         sound: typeof sound === 'boolean' ? sound : DEFAULT_SETTINGS.sound,
         clickToEnter: typeof clickToEnter === 'boolean' ? clickToEnter : DEFAULT_SETTINGS.clickToEnter,
         showHint: typeof showHint === 'boolean' ? showHint : DEFAULT_SETTINGS.showHint,
+        fixedClip: typeof fixedClip === 'string' ? fixedClip : DEFAULT_SETTINGS.fixedClip,
       }
     } catch (error) {
       ctx.logger?.warn?.('boot-animation: settings unreadable, using defaults', error)
